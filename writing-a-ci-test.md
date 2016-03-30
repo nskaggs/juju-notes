@@ -37,7 +37,7 @@
 	$ export CONTROLLER_NAME=lxd-controller
 	$ juju bootstrap $CONTROLLER_NAME lxd --upload-tools
 	$ juju deploy mysql && juju deploy wordpress
-	$ juju add-relation wordpress
+	$ juju add-relation mysql wordpress
 	$ juju expose wordpress
 	$ juju status  ## note the wordpress IP
 	$ xdg-open http://<wordpress_address>
