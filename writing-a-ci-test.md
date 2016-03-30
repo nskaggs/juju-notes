@@ -52,12 +52,11 @@ this writing -- destroy a controller that was created by a preveious version.
 ## Get ci tools and ci repository 
 
 	$ cd ~/py
+	# contains charms
 	$ bzr branch lp:juju-ci-tools/repository
+	# contains tests
 	$ bzr branch lp:juju-ci-tools 
-	$ cd juju-ci-tools
-	## Do some bzr magic I don't get... TODO(ro) cognitive overload BTA
-	$ bzr branch lp:~sseman/juju-ci-tools/assess-min-version co:sseman-min-version 
-	$ bzr switch sseman-min-version 
+	$ cd juju-ci-tools 
 
 Other strange magic to use the CI test tools. TODO(ro) BTA WTF to get it setup.
 
