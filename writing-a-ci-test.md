@@ -23,13 +23,12 @@
 	$ export PATH=$PATH:$HOME/juju/bin
 	$ mkdir juju/src/github.com/juju/juju
 	$ cd  juju/src/github.com/juju/juju
-	$ git clone git@github.com:juju/juju.git .
-	$ cd juju
+	$ git clone https://github.com/juju/juju.git .
 	$ go get ./...
 	$ godeps -u depedencies.txt
 	$ make
 	$ go install ./...
-	$ go test github.com:juju/juju/... TODO(ro) BTA duration too long. Only features that take longer than a test run become targets.
+	$ go test ./... TODO(ro) BTA duration too long. Only features that take longer than a test run become targets.
 
 
 ## Try it out
@@ -63,8 +62,6 @@ Other strange magic to use the CI test tools. TODO(ro) BTA WTF to get it setup.
 
 	$ mkvirtualenv juju-ci-tools
 	$ pip install -r requirements.txt
-	$ pip install python-yaml
-	$ pip install py-yaml
 	$ pip install pyyaml
 	$ pip install boto
 	$ pip install mock
