@@ -80,7 +80,8 @@ Other strange magic to use the CI test tools. TODO(ro) BTA WTF to get it setup.
 	$ juju autoload-credentials  # This pulls the aws creds and write it to a creds file
 	$ ln -s ~/.local/share/juju/credentials.yaml ~/.juju/  ## Link the creds file to the juju1 location for ci-tools
 	$ touch ~/.juju/clouds.yaml  # ci-tools requires this file, even if empty.
-	$ mkdir /tmp/juju-ci-tools  # ci-tools puts output here.
+	$ mkdir ~/tmp
+	$ mkdir ~/tmp/juju-ci-tools  # ci-tools puts output here.
 
 Next we need to make a test suite for ci-tools 
 
