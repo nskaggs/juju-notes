@@ -18,6 +18,7 @@
 
 ## Build Juju
 
+	$ sudo apt-get install juju-mongodb
 	$ mkdir ~/juju
 	$ gopath ~/juju
 	$ export PATH=$PATH:$HOME/juju/bin
@@ -57,15 +58,14 @@ this writing -- destroy a controller that was created by a preveious version.
 
 Other strange magic to use the CI test tools. TODO(ro) BTA WTF to get it setup.
 
-	$ mkvirtualenv juju-ci-tools
+	$ sudo apt-get install virtualenv python-pip python-setuptools
+	$ virtualenv juju-ci-tools
 	$ pip install -r requirements.txt
-	$ pip install python-yaml
-	$ pip install py-yaml
 	$ pip install pyyaml
 	$ pip install boto
 	$ pip install mock
 	$ pip install python-jenkins
-	$ pip install python-novaclient 
+	$ pip install python-novaclient
 	$ mkdir ~/.juju  # Sadly the CI Tools require this for 2.x tests too. Martin is aware, but ...
 	$ vim ~/.juju/environments.yaml  
 		environments:
@@ -80,7 +80,7 @@ Other strange magic to use the CI test tools. TODO(ro) BTA WTF to get it setup.
 	$ juju autoload-credentials  # This pulls the aws creds and write it to a creds file
 	$ ln -s ~/.local/share/juju/credentials.yaml ~/.juju/  ## Link the creds file to the juju1 location for ci-tools
 	$ touch ~/.juju/clouds.yaml  # ci-tools requires this file, even if empty.
-	$ mkdir ~/tmp/juju-ci-tools  # ci-tools puts output here.
+	$ mkdir /tmp/juju-ci-tools  # ci-tools puts output here.
 
 Next we need to make a test suite for ci-tools 
 
