@@ -89,11 +89,14 @@ Next we need to make a test suite for ci-tools
 		install -m 644 template_test.py.tmpl tests/test_assess_NAMEHERE.py
 		sed -i -e "s/TEMPLATE/NAMEHERE/g" assess_NAMEHERE.py tests/test_assess_NAMEHERE.
 	$ # Rename the files with your fetaure branch in lieu of NAMEHERE
+	$ mv assess_NAMEHERE.py assess_NAMEHERE.py 
+	$ mv tests/test_assess_NAMEHERE.py tests/test_assess_NAMEHERE.py
 	$ # Search/replace internally to replace NAMEHERE with your feature moniker. 
 	$ # Edit edit edit
 	$ rm -rf ~/tmp/juju-ci-tools/*  # Empty this NOW, so it doesn't bomb after a run and you don't get your logs you might want.
 	$ export TEST_CONTROLLER_NAME=test-lxd-controller-name
-	$ date && python assess_min_version.py --series xenial --debug lxd ~/juju/bin/juju ~/tmp/juju-ci-tools --upload-tools  && echo "exit: $?"; date 	  $ Wait...
+	$ date && python assess_min_version.py --series xenial --debug lxd ~/juju/bin/juju ~/tmp/juju-ci-tools --upload-tools  && echo "exit: $?"; date 	  
+	$ Wait...
 
 
 
